@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - Nexus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="logo">Nexus<span class="text-gradient">.</span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="about.html" style="color: var(--text-primary);">About</a>
+        <a href="testimonials.html">Testimonials</a>
+      </div>
+      <button class="btn btn-primary" onclick="window.location.href='index.html'">Get Started</button>
+    </div>
+  </nav>
+
+  <section class="hero" style="min-height: 60vh; padding-top: 12rem; align-items: flex-start;">
+    <div class="hero-glow" style="animation-duration: 10s; filter: blur(100px); background: radial-gradient(circle at center, rgba(0, 112, 243, 0.15) 0%, rgba(0, 0, 0, 0) 70%);"></div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <h1 style="font-size: clamp(3rem, 6vw, 4.5rem);">About <span class="text-gradient-accent">Nexus</span></h1>
+        <p>We are a collective of visionaries, engineers, and designers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" style="padding-top: 2rem;">
+    <div class="container">
+      <div class="split-layout">
+        <div class="split-text reveal">
+          <h2>We build digital experiences that inspire</h2>
+          <p>Nexus is a forward-thinking digital agency focused on crafting premium solutions for ambitious brands. Our team of world-class designers and engineers work tirelessly to transform your vision into reality.</p>
+          <p>We don't just build websites; we build ecosystems that drive growth and captivate audiences globally.</p>
+        </div>
+        <div class="split-image reveal reveal-delay-2">
+          <div class="image-glow"></div>
+          <img src="file:///C:/Users/Ruveen/.gemini/antigravity/brain/074f0486-d2c0-4bb6-9b8d-a88fd448d1f4/abstract_3d_shapes_1784768172953.jpg" alt="Abstract 3D Shapes">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2>Join our growing team</h2>
+        <p>We are always looking for exceptional talent to join our mission.</p>
+        <button class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">View Openings</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        &copy; <span id="year"></span> Nexus Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    feather.replace();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    setTimeout(() => document.querySelector('.hero-content.reveal').classList.add('active'), 100);
+  </script>
+</body>
+</html>

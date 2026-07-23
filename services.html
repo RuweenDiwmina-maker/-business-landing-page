@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Nexus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="logo">Nexus<span class="text-gradient">.</span></a>
+      <div class="nav-links">
+        <a href="services.html" style="color: var(--text-primary);">Services</a>
+        <a href="about.html">About</a>
+        <a href="testimonials.html">Testimonials</a>
+      </div>
+      <button class="btn btn-primary" onclick="window.location.href='index.html'">Get Started</button>
+    </div>
+  </nav>
+
+  <section class="hero" style="min-height: 60vh; padding-top: 12rem; align-items: flex-start;">
+    <div class="hero-glow" style="animation-duration: 10s;"></div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <h1 style="font-size: clamp(3rem, 6vw, 4.5rem);">Premium <span class="text-gradient-accent">Services</span></h1>
+        <p>Explore our suite of world-class digital solutions designed to elevate your brand.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" style="padding-top: 2rem;">
+    <div class="container">
+      <div class="grid">
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon"><i data-feather="globe"></i></div>
+          <h3>Digital Strategy</h3>
+          <p>Comprehensive roadmaps tailored to your unique business goals and market position.</p>
+        </div>
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon"><i data-feather="zap"></i></div>
+          <h3>Performance Marketing</h3>
+          <p>Data-driven campaigns that maximize ROI and bring high-quality leads to your door.</p>
+        </div>
+        <div class="card reveal reveal-delay-3">
+          <div class="card-icon"><i data-feather="shield"></i></div>
+          <h3>Enterprise Security</h3>
+          <p>Bank-grade protection for your digital assets and customer data.</p>
+        </div>
+        <div class="card reveal reveal-delay-4">
+          <div class="card-icon"><i data-feather="bar-chart-2"></i></div>
+          <h3>Analytics & Insights</h3>
+          <p>Actionable metrics and beautiful dashboards to track your growth in real-time.</p>
+        </div>
+        
+        <div class="card reveal reveal-delay-1">
+          <div class="card-icon"><i data-feather="layout"></i></div>
+          <h3>UI/UX Design</h3>
+          <p>Award-winning interfaces that captivate users and drive conversions.</p>
+        </div>
+        <div class="card reveal reveal-delay-2">
+          <div class="card-icon"><i data-feather="smartphone"></i></div>
+          <h3>Mobile Development</h3>
+          <p>Native and cross-platform apps built for speed and reliability.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2>Ready to transform your business?</h2>
+        <p>Join hundreds of forward-thinking companies building the future with Nexus.</p>
+        <button class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Let's Talk</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        &copy; <span id="year"></span> Nexus Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    feather.replace();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      });
+    });
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    setTimeout(() => document.querySelector('.hero-content.reveal').classList.add('active'), 100);
+  </script>
+</body>
+</html>

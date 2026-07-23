@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials - Nexus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="logo">Nexus<span class="text-gradient">.</span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="testimonials.html" style="color: var(--text-primary);">Testimonials</a>
+      </div>
+      <button class="btn btn-primary" onclick="window.location.href='index.html'">Get Started</button>
+    </div>
+  </nav>
+
+  <section class="hero" style="min-height: 60vh; padding-top: 12rem; align-items: flex-start;">
+    <div class="hero-glow" style="animation-duration: 10s; background: radial-gradient(circle at center, rgba(255, 0, 128, 0.15) 0%, rgba(0, 0, 0, 0) 70%);"></div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <h1 style="font-size: clamp(3rem, 6vw, 4.5rem);">Client <span class="text-gradient-accent">Testimonials</span></h1>
+        <p>Hear from the industry leaders who have partnered with us.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials" style="padding-top: 2rem; background: transparent;">
+    <div class="container">
+      <div class="grid">
+        <div class="testimonial-card reveal reveal-delay-1">
+          <p class="testimonial-text">"Nexus completely transformed our digital presence. Their attention to detail and premium design aesthetic is unmatched in the industry."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">S</div>
+            <div class="author-info">
+              <h4>Sarah Jenkins</h4>
+              <p>CEO, TechFlow</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <p class="testimonial-text">"The level of polish they delivered exceeded our wildest expectations. Our conversion rates have skyrocketed since the redesign."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">M</div>
+            <div class="author-info">
+              <h4>Michael Chen</h4>
+              <p>Founder, Innovate AI</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-3">
+          <p class="testimonial-text">"A truly world-class team. Working with Nexus felt like a partnership from day one. They understand exactly what a modern brand needs."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">E</div>
+            <div class="author-info">
+              <h4>Elena Rodriguez</h4>
+              <p>CMO, GlobalScale</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="testimonial-card reveal reveal-delay-1">
+          <p class="testimonial-text">"From concept to deployment, Nexus was flawless. Their technical expertise is just as impressive as their design skills."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #10b981, #047857);">D</div>
+            <div class="author-info">
+              <h4>David Smith</h4>
+              <p>CTO, FinTech Next</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+          <p class="testimonial-text">"Our mobile app retention doubled after Nexus redesigned our UX. I highly recommend them to any serious startup."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #f59e0b, #b45309);">J</div>
+            <div class="author-info">
+              <h4>Jessica Lee</h4>
+              <p>Product Lead, StartApp</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-3">
+          <p class="testimonial-text">"We rely on Nexus for all our enterprise software design. They always deliver on time and above expectations."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar" style="background: linear-gradient(135deg, #ef4444, #b91c1c);">R</div>
+            <div class="author-info">
+              <h4>Robert Vance</h4>
+              <p>Director, VanceRefrigeration</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box reveal">
+        <h2>Ready to transform your business?</h2>
+        <p>Join hundreds of forward-thinking companies building the future with Nexus.</p>
+        <button class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">Let's Talk</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        &copy; <span id="year"></span> Nexus Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    feather.replace();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    setTimeout(() => document.querySelector('.hero-content.reveal').classList.add('active'), 100);
+  </script>
+</body>
+</html>
