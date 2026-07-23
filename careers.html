@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers - Nexus</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .jobs-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+    
+    .job-card {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .job-card:hover {
+      border-color: var(--accent-blue);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateY(-5px);
+    }
+
+    .job-info h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-meta {
+      display: flex;
+      gap: 1.5rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      align-items: center;
+    }
+
+    .job-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    
+    .job-meta i {
+      width: 16px;
+      height: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .job-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+      }
+      .job-card .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="index.html" class="logo">Nexus<span class="text-gradient">.</span></a>
+      <div class="nav-links">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="testimonials.html">Testimonials</a>
+      </div>
+      <button class="btn btn-primary" onclick="window.location.href='get-started.html'">Get Started</button>
+    </div>
+  </nav>
+
+  <section class="hero" style="min-height: 50vh; padding-top: 12rem; align-items: flex-start;">
+    <div class="hero-glow" style="animation-duration: 9s; filter: blur(100px); background: radial-gradient(circle at center, rgba(236, 72, 153, 0.15) 0%, rgba(0, 0, 0, 0) 60%);"></div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <h1 style="font-size: clamp(3rem, 6vw, 4.5rem);">Join Our <span class="text-gradient-accent">Mission</span></h1>
+        <p>Build the future of digital with a team of passionate creators and engineers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 2rem 0 8rem;">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2>Open Positions</h2>
+        <p>Find your next big opportunity at Nexus.</p>
+      </div>
+      
+      <div class="jobs-list">
+        
+        <div class="job-card reveal reveal-delay-1">
+          <div class="job-info">
+            <h3>Senior UI/UX Designer</h3>
+            <div class="job-meta">
+              <span><i data-feather="map-pin"></i> Remote (Global)</span>
+              <span><i data-feather="clock"></i> Full-time</span>
+              <span><i data-feather="briefcase"></i> Design</span>
+            </div>
+          </div>
+          <button class="btn btn-outline" onclick="window.location.href='get-started.html'">Apply Now</button>
+        </div>
+
+        <div class="job-card reveal reveal-delay-2">
+          <div class="job-info">
+            <h3>Lead Frontend Engineer</h3>
+            <div class="job-meta">
+              <span><i data-feather="map-pin"></i> New York, USA</span>
+              <span><i data-feather="clock"></i> Full-time</span>
+              <span><i data-feather="briefcase"></i> Engineering</span>
+            </div>
+          </div>
+          <button class="btn btn-outline" onclick="window.location.href='get-started.html'">Apply Now</button>
+        </div>
+
+        <div class="job-card reveal reveal-delay-3">
+          <div class="job-info">
+            <h3>Product Marketing Manager</h3>
+            <div class="job-meta">
+              <span><i data-feather="map-pin"></i> London, UK</span>
+              <span><i data-feather="clock"></i> Full-time</span>
+              <span><i data-feather="briefcase"></i> Marketing</span>
+            </div>
+          </div>
+          <button class="btn btn-outline" onclick="window.location.href='get-started.html'">Apply Now</button>
+        </div>
+
+        <div class="job-card reveal reveal-delay-4">
+          <div class="job-info">
+            <h3>Backend Developer (Go/Node)</h3>
+            <div class="job-meta">
+              <span><i data-feather="map-pin"></i> Remote (Europe)</span>
+              <span><i data-feather="clock"></i> Contract</span>
+              <span><i data-feather="briefcase"></i> Engineering</span>
+            </div>
+          </div>
+          <button class="btn btn-outline" onclick="window.location.href='get-started.html'">Apply Now</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="footer-bottom" style="border-top: none; padding-top: 0;">
+        &copy; <span id="year"></span> Nexus Inc. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    feather.replace();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    setTimeout(() => document.querySelector('.hero-content.reveal').classList.add('active'), 100);
+  </script>
+  
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyDhVyzOb-B4Wvz1VtbHh9QgNFLsPfpXtFY",
+      authDomain: "business-landing-web.firebaseapp.com",
+      projectId: "business-landing-web",
+      storageBucket: "business-landing-web.firebasestorage.app",
+      messagingSenderId: "488818075147",
+      appId: "1:488818075147:web:58c9b8dd2ee3eeed81c90e",
+      measurementId: "G-XKSB3N6NRR"
+    };
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+</body>
+</html>
